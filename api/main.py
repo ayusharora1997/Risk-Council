@@ -1,6 +1,7 @@
 """FastAPI application — AI Risk Council backend API."""
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
@@ -30,13 +31,16 @@ app = FastAPI(
 )
 
 # ── CORS ──────────────────────────────────────────────────────────────────────
+_ALLOW_ORIGINS = list(filter(None, [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    os.getenv("FRONTEND_URL"),   # set in Railway: e.g. https://risk-council.vercel.app
+]))
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",   # Vite dev server
-        "http://localhost:3000",   # CRA / alternative
-        "https://*.vercel.app",    # Vercel preview + production
-    ],
+    allow_origins=_ALLOW_ORIGINS,
+    allow_origin_regex=r"https://.*\.(vercel\.app|railway\.app)",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
