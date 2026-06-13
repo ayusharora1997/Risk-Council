@@ -133,8 +133,8 @@ Running the same scenario through different generator models (e.g. GPT-4o vs Cla
 ## Quick start — Windows (PowerShell)
 
 ```powershell
-git clone https://github.com/YOUR_USERNAME/ai-risk-council.git
-cd ai-risk-council
+git clone https://github.com/ayusharora1997/Risk-Council.git
+cd Risk-Council
 
 .\setup.ps1          # creates .venv, installs deps, copies .env
 
@@ -150,8 +150,8 @@ Open **http://localhost:5173**
 ## Quick start — macOS / Linux
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ai-risk-council.git
-cd ai-risk-council
+git clone https://github.com/ayusharora1997/Risk-Council.git
+cd Risk-Council
 
 bash setup.sh        # creates .venv, installs deps, copies .env
 
@@ -288,3 +288,7 @@ ai-risk-council/
 
 MIT — see [LICENSE](LICENSE).  
 Copyright © 2026 Ayush Arora
+
+---
+
+**Repository:** [github.com/ayusharora1997/Risk-Council](https://github.com/ayusharora1997/Risk-Council)
