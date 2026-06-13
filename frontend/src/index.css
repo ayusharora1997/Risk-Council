@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #09090b;
+    background-image:
+      radial-gradient(60rem 40rem at 110% -10%, rgba(79, 70, 229, 0.10), transparent 60%),
+      radial-gradient(50rem 40rem at -10% 10%, rgba(99, 102, 241, 0.06), transparent 55%);
+    background-attachment: fixed;
+  }
+  ::-webkit-scrollbar { width: 7px; height: 7px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #52525b; }
+}
+
+@layer components {
+  .card {
+    @apply bg-zinc-900/70 border border-zinc-800 rounded-2xl backdrop-blur-sm;
+  }
+  .card-hover {
+    @apply transition-all duration-150 hover:border-zinc-700 hover:bg-zinc-900;
+  }
+  /* Sidebar navigation links */
+  .nav-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium
+           text-zinc-400 hover:text-white hover:bg-zinc-800/60 transition-all duration-150;
+  }
+  .nav-link-active {
+    @apply bg-brand-600/15 text-white ring-1 ring-brand-500/30;
+  }
+  .stat-chip {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg
+           bg-zinc-800/60 border border-zinc-700/60 text-xs font-medium text-zinc-300;
+  }
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-500 active:bg-brand-700
+           text-white font-semibold px-6 py-3 rounded-xl
+           transition-all duration-150 disabled:opacity-40
+           disabled:cursor-not-allowed focus:outline-none
+           focus:ring-2 focus:ring-brand-400 focus:ring-offset-2
+           focus:ring-offset-zinc-950;
+  }
+  .btn-ghost {
+    @apply bg-zinc-800 hover:bg-zinc-700 text-zinc-300
+           font-medium px-4 py-2 rounded-lg transition-all duration-150;
+  }
+  .input {
+    @apply w-full bg-zinc-800 border border-zinc-700 rounded-xl
+           px-4 py-3 text-zinc-100 placeholder-zinc-500
+           focus:outline-none focus:ring-2 focus:ring-brand-500
+           focus:border-transparent transition-all duration-150;
+  }
+  .label {
+    @apply block text-sm font-medium text-zinc-400 mb-1.5;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full
+           text-xs font-medium;
+  }
+}
